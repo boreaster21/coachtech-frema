@@ -1,1 +1,6 @@
-/vendor\n/node_modules\n.env\n/storage/*.key\n/public/storage\n/docker/mysql/data/
+/vendor
+/node_modules
+.env
+/storage/*.key
+/public/storage
+docker/mysql/data/
