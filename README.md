@@ -83,6 +83,7 @@ cp .env.example .env
 # Laravel設定
 docker-compose exec app php artisan key:generate
 docker-compose exec app php artisan migrate --seed
+※src/storage/app/public/product-iconsにサンプル商品画像をいくつか保存してからシードしてください。
 docker-compose exec app php artisan storage:link
 ```
 
