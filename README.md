@@ -86,7 +86,7 @@ docker-compose exec app php artisan migrate --seed
 docker-compose exec app php artisan storage:link
 ```
 
-## 他に記載することがあれば記述する
+## 補足
 - 管理者用アカウント:
   - メール: `admin@example.com`
   - パスワード: `adminpassword`
