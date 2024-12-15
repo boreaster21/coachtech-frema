@@ -1,15 +1,11 @@
-/* Reset body padding and margin */
 body {
     margin: 0;
     padding: 0;
 }
 
-/* Register Page Styling */
-
 .register-container {
     max-width: 400px;
     margin: 80px auto 0 auto;
-    /* Top margin to separate header */
     padding: 30px 20px;
     text-align: center;
     background-color: #fff;
@@ -44,7 +40,6 @@ body {
     margin-top: 5px;
 }
 
-/* Register Button */
 .register-button {
     display: block;
     width: 100%;
@@ -63,30 +58,19 @@ body {
     background-color: #e04343;
 }
 
-/* Login Link */
 .login-link {
     display: inline-block;
     margin-top: 15px;
     font-size: 14px;
     color: #007bff;
-    /* 青色に設定 */
     text-decoration: none;
-    /* アンダーバーを消去 */
     transition: color 0.3s ease;
 }
 
 .login-link:hover {
     color: #0056b3;
-    /* ホバー時に少し濃い青に */
 }
 
-/* Hide Search Form and Nav for Register Page */
-.search-form,
-.nav-buttons {
-    display: none;
-}
-
-/* Logo in Header */
 .header .logo-container {
     flex-basis: auto;
     display: flex;
@@ -96,14 +80,11 @@ body {
 
 .logo {
     width: 100px;
-    /* Adjust logo size */
     height: auto;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
 
-    /* Register Container for Mobile */
     .register-container {
         padding: 20px 15px;
         margin-top: 50px;
@@ -122,15 +103,11 @@ body {
         font-size: 16px;
     }
 
-    /* Logo Styling for Mobile */
     .logo {
         width: 120px;
-        /* Larger logo for smaller screens */
         margin: 0 auto;
-        /* Centered on smaller screens */
     }
 
-    /* Center Header Contents on Mobile */
     .header {
         flex-direction: column;
         align-items: center;

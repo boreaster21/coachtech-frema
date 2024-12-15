@@ -1,4 +1,4 @@
-/* 全体のコンテナを中央揃えに */
+
 .product-container {
     display: flex;
     justify-content: center;
@@ -8,7 +8,7 @@
     padding: 20px;
 }
 
-/* 商品画像 */
+
 .product-image {
     width: 300px;
     height: 400px;
@@ -25,7 +25,7 @@
     object-fit: contain;
 }
 
-/* 商品詳細情報 */
+
 .product-details {
     flex-grow: 1;
     display: flex;
@@ -34,7 +34,7 @@
     max-width: 600px;
 }
 
-/* 商品タイトルと価格 */
+
 .product-details h1 {
     font-size: 24px;
     font-weight: bold;
@@ -46,7 +46,7 @@
     margin: 20px 0;
 }
 
-/* アイコン */
+
 .icons {
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@
     background-color: darkred;
 }
 
-/* 768px以下の画面幅 */
+
 @media (max-width: 768px) {
     .product-container {
         flex-direction: column;
@@ -117,7 +117,7 @@
     }
 }
 
-/* コメントエリア */
+
 .chat-container {
     margin-top: 20px;
     padding: 15px;
@@ -126,7 +126,7 @@
     border-radius: 5px;
 }
 
-/* コメントリスト */
+
 .comment-list {
     max-height: 400px;
     overflow-y: auto;
@@ -177,7 +177,7 @@
     text-align: right;
 }
 
-/* コメント投稿フォーム */
+
 .comment-form {
     display: flex;
     flex-direction: column;
@@ -210,7 +210,7 @@
     background-color: #e04343;
 }
 
-/* 768px以下の画面幅 */
+
 @media (max-width: 768px) {
     .chat-container {
         width: 100%;

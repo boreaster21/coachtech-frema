@@ -9,7 +9,7 @@ class Payment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['method_name', 'description'];
+    protected $fillable = ['method_name'];
 
     public function purchases()
     {

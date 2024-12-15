@@ -1,4 +1,3 @@
-/* 購入ページ */
 
 .purchase-confirm-container {
     display: flex;
@@ -46,7 +45,6 @@
     text-decoration: none;
 }
 
-/* 768px以下の画面幅 */
 @media (max-width: 768px) {
     .purchase-confirm-container {
         flex-direction: column;

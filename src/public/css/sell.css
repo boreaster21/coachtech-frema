@@ -1,5 +1,3 @@
-/* sell.css */
-
 .sell-container {
     max-width: 800px;
     margin: 0 auto;
@@ -44,7 +42,6 @@
     box-sizing: border-box;
 }
 
-/* 販売価格の入力欄 */
 .price-container {
     position: relative;
     width: 100%;
@@ -81,7 +78,6 @@
     background-color: #e04343;
 }
 
-/* 768px以下の画面幅 */
 @media (max-width: 768px) {
     .sell-container {
         padding: 15px;

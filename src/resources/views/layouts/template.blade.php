@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'coachtechフリマ')</title>
     @yield('css')
-    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
     <link rel="stylesheet" href="{{ asset('css/templete.css') }}">
 </head>
 

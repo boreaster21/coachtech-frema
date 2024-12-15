@@ -7,7 +7,6 @@ use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserNotificationMail;
-use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -43,7 +42,6 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'コメントを削除しました。');
     }
 
-
     public function sendMail(Request $request)
     {
         $request->validate([
@@ -58,9 +56,11 @@ class AdminController extends Controller
             Mail::to($user->email)->send(new UserNotificationMail($request->subject, $request->message));
             return redirect()->route('admin.dashboard')->with('success', 'メールを送信しました。');
         } catch (\Exception $e) {
-            return redirect()->route('admin.dashboard')->with('error', 'メール送信に失敗しました: ' . $e->getMessage());
+            return redirect()
+                ->route('admin.dashboard')
+                ->with('error', 'メール送信に失敗しました: ' . $e->getMessage());
         }
-    }
 
+    }
 }
 

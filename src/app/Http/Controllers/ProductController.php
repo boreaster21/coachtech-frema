@@ -7,7 +7,6 @@ use App\Models\Category;
 use App\Models\Condition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
@@ -18,12 +17,10 @@ class ProductController extends Controller
     {
         $tab = $request->input('tab', 'recommend');
 
-        // おすすめ商品の取得（購入済みの商品を除外）
         $products = Product::where('is_sold', false)
             ->doesntHave('purchasers') // 購入者がいない商品を取得
             ->get();
 
-        // マイリスト用のお気に入り商品を取得
         $myFavorites = [];
         if ($tab === 'mylist' && Auth::check()) {
             $myFavorites = Auth::user()->favorites()
@@ -63,7 +60,6 @@ class ProductController extends Controller
             ]);
         }
 
-        // 未ログインの場合リダイレクト
         return redirect()->route('login')->with('status', 'マイリストを見るにはログインが必要です。');
     }
 
@@ -92,14 +88,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-
-        if (!Auth::check()) {
-            return redirect()->route('login')->with('status', '出品するにはログインが必要です。');
-        }
-        
         $categories = Category::all();
         $conditions = Condition::all();
-
         return view('sell', compact('categories', 'conditions'));
     }
 
@@ -108,12 +98,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-        if (!Auth::check()) {
-            return redirect()->route('login')->with('status', '出品するにはログインが必要です。');
-        }
-        // バリデーション
-        $request->validate([
+        $validated = $request->validate([
             'product_image' => 'required|image',
             'name' => 'required|string|max:255',
             'brand_name' => 'nullable|string|max:255',
@@ -123,22 +108,19 @@ class ProductController extends Controller
             'condition' => 'required|integer',
         ]);
 
-        // 画像のアップロード処理
         $path = $request->file('product_image')->store('product_images', 'public');
 
-        // 商品の登録
         $product = Product::create([
             'user_id' => Auth::id(),
             'product_photo_path' => "storage/$path",
-            'name' => $request->name,
-            'brand_name' => $request->brand_name,
-            'description' => $request->description,
-            'price' => $request->price,
+            'name' => $validated['name'],
+            'brand_name' => $validated['brand_name'] ?? '',
+            'description' => $validated['description'],
+            'price' => $validated['price'],
         ]);
 
-        // 中間テーブルにカテゴリーと状態を保存
-        $product->categories()->attach($request->category);
-        $product->conditions()->attach($request->condition);
+        $product->categories()->attach($validated['category']);
+        $product->conditions()->attach($validated['condition']);
 
         return redirect()->route('product.index')->with('status', '商品が正常に出品されました。');
     }

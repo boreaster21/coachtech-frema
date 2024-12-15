@@ -1,4 +1,4 @@
-/* 全体のレイアウト */
+
 .section-container {
     padding: 3rem 0;
     max-width: 800px;
@@ -6,7 +6,6 @@
     text-align: center;
 }
 
-/* 各セクションのボックス */
 .section-box {
     padding: 20px;
     background-color: #fff;
@@ -15,7 +14,7 @@
     margin-bottom: 20px;
 }
 
-/* セクションのタイトル */
+
 .section-title {
     font-size: 24px;
     font-weight: bold;
@@ -24,14 +23,13 @@
     text-align: center;
 }
 
-/* プロフィール画像のコンテナ */
+
 .profile-picture-container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-/* プロフィール画像 */
 .profile-image {
     width: 60px;
     height: 60px;
@@ -41,7 +39,6 @@
     object-fit: cover;
 }
 
-/* 画像選択ボタン */
 .image-upload-button {
     font-size: 14px;
     font-weight: bold;
@@ -61,12 +58,12 @@
     color: #fff;
 }
 
-/* hidden クラスで input を非表示 */
+
 .hidden {
     display: none;
 }
 
-/* フォームスタイル */
+
 .form-group {
     margin-bottom: 15px;
     text-align: left;
@@ -80,7 +77,6 @@
     margin-bottom: 5px;
 }
 
-/* 入力フィールド */
 .form-input {
     width: 100%;
     padding: 10px;
@@ -90,14 +86,14 @@
     box-sizing: border-box;
 }
 
-/* エラーメッセージ */
+
 .error-message {
     font-size: 14px;
     color: #e63946;
     margin-top: 5px;
 }
 
-/* 横長のボタンスタイル */
+
 .form-button {
     display: block;
     width: 100%;
@@ -117,7 +113,7 @@
     background-color: #e04343;
 }
 
-/* ダークモード対応 */
+
 .dark .section-box {
     background-color: #333;
     color: #fff;
@@ -147,10 +143,10 @@
     background-color: #e04343;
 }
 
-/* レスポンシブデザイン（768px以下の画面幅用） */
+
 @media (max-width: 768px) {
 
-    /* プロフィール画像とボタンのレイアウト */
+
     .profile-picture-container {
         flex-direction: column;
         align-items: center;
@@ -167,14 +163,14 @@
         padding: 10px;
     }
 
-    /* フォームボタン */
+
     .form-button {
         width: 100%;
         padding: 12px;
         font-size: 18px;
     }
 
-    /* セクション */
+
     .section-container {
         padding: 20px;
     }

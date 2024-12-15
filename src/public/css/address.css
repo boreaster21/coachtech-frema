@@ -1,19 +1,18 @@
-/* 全体のコンテナ */
+
 .address-edit-container {
     width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
 }
 
-/* タイトル */
 .address-edit-container h1 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* フォームのフィールド */
 .form-group {
     margin-bottom: 15px;
     text-align: left;
@@ -36,7 +35,6 @@
     box-sizing: border-box;
 }
 
-/* 更新ボタン */
 .btn-primary {
     display: inline-block;
     width: 100%;

@@ -9,7 +9,13 @@ class Purchase extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'product_id', 'payment_id', 'purchased_at', 'status'];
+    protected $fillable = [
+        'user_id', 
+        'product_id', 
+        'payment_id', 
+        'purchased_at', 
+        'status'
+    ];
 
     protected $casts = [
         'purchased_at' => 'datetime',
@@ -19,7 +25,6 @@ class Purchase extends Model
     {
         return $this->belongsTo(Product::class, 'product_id');
     }
-
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

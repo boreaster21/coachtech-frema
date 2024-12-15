@@ -11,7 +11,7 @@ class FavoriteController extends Controller
     public function toggleFavorite($id)
     {
         $user = Auth::user();
-        $user->favorites()->toggle($id); // お気に入りの追加・削除
+        $user->favorites()->toggle($id); 
         return back();
     }
     /**

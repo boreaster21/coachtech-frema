@@ -1,11 +1,11 @@
-/* マイページ全体のスタイル */
+
 .mypage-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* ユーザー情報 */
+
 .user-info {
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@
     background-color: #d00;
 }
 
-/* タブメニュー */
+
 .tab-menu {
     display: flex;
     justify-content: space-around;
@@ -62,7 +62,7 @@
     border-bottom-color: red;
 }
 
-/* 商品グリッド */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -70,7 +70,7 @@
     padding: 20px 0;
 }
 
-/* 商品カード全体 */
+
 .product-item {
     background-color: #f9f9f9;
     padding: 10px;
@@ -85,7 +85,7 @@
     position: relative;
 }
 
-/* 商品画像を正方形に */
+
 .product-item img {
     width: 100%;
     height: auto;
@@ -96,7 +96,7 @@
     /* 背景色を追加 */
 }
 
-/* 商品名と値段のスタイル */
+
 .product-item p {
     margin: 0;
     font-size: 16px;
@@ -111,7 +111,7 @@
     margin-top: 5px;
 }
 
-/* レスポンシブデザイン */
+
 @media (max-width: 768px) {
     .mypage-container {
         padding: 10px;

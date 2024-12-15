@@ -117,7 +117,6 @@ class PaymentController extends Controller
 
         $product->update(['is_sold' => true]);
 
-        // 支払い方法を取得
         $paymentMethod = session('payment_method', 'コンビニ払い');
         $payment = Payment::where('method_name', $paymentMethod)->first();
 
@@ -139,7 +138,7 @@ class PaymentController extends Controller
             session(['redirect_to' => $request->input('redirect_to')]);
         }
 
-        $payments = Payment::all(); // 支払い方法を取得
+        $payments = Payment::all(); 
         return view('payment.edit', compact('payments'));
     }
 
