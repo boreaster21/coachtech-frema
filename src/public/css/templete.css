@@ -1,0 +1,165 @@
+/* ヘッダー */
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #000;
+    padding: 0 20px;
+    height: 50px;
+}
+
+/* ロゴ */
+.logo-container {
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+/* 検索フォーム */
+.search-form {
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.sort-box {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ナビゲーションボタン */
+.nav-buttons {
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-buttons a,
+.nav-buttons button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 出品ボタン */
+.nav-buttons a[href*="/sell"] {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-buttons a[href*="/sell"]:hover {
+    color: white;
+    background-color: #333;
+}
+
+/* 余白のリセット */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* フッター */
+.footer-content {
+    text-align: center;
+    padding: 15px;
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 14px;
+}
+
+/* レスポンシブデザイン（768px以下の画面幅用） */
+@media (max-width: 768px) {
+
+    /* ヘッダー */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        height: auto;
+    }
+
+    /* ロゴをさらに大きく */
+    .logo-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+
+    .logo {
+        width: 140px;
+        margin-left: 0;
+    }
+
+    /* 検索フォーム */
+    .search-form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .search-box {
+        width: 66.66%;
+        margin-right: 5px;
+    }
+
+    .sort-box {
+        width: 33.33%;
+    }
+
+    /* ナビゲーションボタン */
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .nav-buttons a,
+    .nav-buttons button {
+        width: 90%;
+        margin: 5px 0;
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* 出品ボタン */
+    .nav-buttons a[href*="/sell"] {
+        color: black;
+        background-color: white;
+    }
+}

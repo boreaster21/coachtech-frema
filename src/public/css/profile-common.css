@@ -1,0 +1,191 @@
+/* 全体のレイアウト */
+.section-container {
+    padding: 3rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 各セクションのボックス */
+.section-box {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* セクションのタイトル */
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* プロフィール画像のコンテナ */
+.profile-picture-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* プロフィール画像 */
+.profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* 画像選択ボタン */
+.image-upload-button {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff4d4d;
+    background-color: transparent;
+    border: 2px solid #ff4d4d;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.image-upload-button:hover {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+/* hidden クラスで input を非表示 */
+.hidden {
+    display: none;
+}
+
+/* フォームスタイル */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* 入力フィールド */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* エラーメッセージ */
+.error-message {
+    font-size: 14px;
+    color: #e63946;
+    margin-top: 5px;
+}
+
+/* 横長のボタンスタイル */
+.form-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #e04343;
+}
+
+/* ダークモード対応 */
+.dark .section-box {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark .form-input {
+    background-color: #444;
+    border-color: #666;
+    color: #fff;
+}
+
+.dark .image-upload-button {
+    color: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+.dark .image-upload-button:hover {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.dark .form-button {
+    background-color: #ff4d4d;
+}
+
+.dark .form-button:hover {
+    background-color: #e04343;
+}
+
+/* レスポンシブデザイン（768px以下の画面幅用） */
+@media (max-width: 768px) {
+
+    /* プロフィール画像とボタンのレイアウト */
+    .profile-picture-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 80px;
+        margin: 0 0 10px;
+    }
+
+    .image-upload-button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* フォームボタン */
+    .form-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    /* セクション */
+    .section-container {
+        padding: 20px;
+    }
+
+    .section-box {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+}

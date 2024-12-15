@@ -1,0 +1,97 @@
+/* ログインページ全体のレイアウト */
+.login-container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* フォーム全体のスタイル */
+.login-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* フォームグループ（各入力フィールドのコンテナ） */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* 入力フィールドのスタイル */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* チェックボックスとラベルのスタイル */
+.checkbox {
+    margin-right: 5px;
+}
+
+.remember-text {
+    font-size: 14px;
+    color: #333;
+}
+
+/* パスワードを忘れた場合のリンクスタイル */
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #3490dc;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #1d68a7;
+}
+
+/* ログインボタンのスタイル */
+.login-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #e04343;
+}
+
+/* 会員登録リンクのスタイル */
+.register-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover {
+    color: #0056b3;
+        /* ホバー時に少し濃い青に */
+}
+
+/* エラーメッセージのスタイル */
+.error-message {
+    color: #e63946;
+    font-size: 14px;
+    margin-top: 5px;
+}

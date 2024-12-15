@@ -1,0 +1,145 @@
+/* マイページ全体のスタイル */
+.mypage-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ユーザー情報 */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profile-edit-button {
+    background-color: #f00;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: auto;
+    transition: background-color 0.3s;
+}
+
+.profile-edit-button:hover {
+    background-color: #d00;
+}
+
+/* タブメニュー */
+.tab-menu {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.tab-menu a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tab-menu a.active {
+    color: red;
+    border-bottom-color: red;
+}
+
+/* 商品グリッド */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* 商品カード全体 */
+.product-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 商品画像を正方形に */
+.product-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    /* 背景色を追加 */
+}
+
+/* 商品名と値段のスタイル */
+.product-item p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.product-item p.price {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .mypage-container {
+        padding: 10px;
+    }
+
+    .tab-menu a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product-item {
+        padding: 8px;
+    }
+
+    .product-item img {
+        border-radius: 4px;
+    }
+
+    .product-item p {
+        font-size: 14px;
+    }
+
+    .product-item p.price {
+        font-size: 12px;
+    }
+}
