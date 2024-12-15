@@ -39,7 +39,8 @@ C2C (個人間取引) を想定し、商品出品、購入、決済機能を実�
 - **バージョン管理:** Git & GitHub
 
 ## テーブル設計
-<--- 作成したテーブル設計の画像 ----->
+<img width="515" alt="image" src="https://github.com/user-attachments/assets/c1084027-4f6c-4e3a-a02a-f0ea35db2756" />
+
 
 ### テーブル概要:
 #### usersテーブル
