@@ -72,7 +72,7 @@ C2C (個人間取引) を想定し、商品出品、購入、決済機能を実�
 
 ```bash
 # リポジトリのクローン
-git clone https://github.com/yourusername/your-repo.git
+git clone git@github.com:boreaster21/coachtech-frema.git
 
 # Dockerコンテナのビルドと起動
 docker-compose up -d --build
