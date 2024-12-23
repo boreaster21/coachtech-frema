@@ -1,14 +1,14 @@
 <div class="profile-picture-container" x-data="picturePreview()">
-    <!-- プロフィール画像 -->
     <div class="profile-picture">
         <img
             id="preview"
-            src="{{ isset(Auth::user()->profile_photo_path) ? asset('storage/' . Auth::user()->profile_photo_path) : asset('images/user_icon.png') }}"
+            src="{{ Auth::user()->profile_photo_path 
+                    ? Storage::url(Auth::user()->profile_photo_path) 
+                    : asset('images/default_avatar.png') }}"
             alt="プロフィール画像"
             class="profile-image">
     </div>
 
-    <!-- 画像選択ボタン -->
     <div class="profile-picture-button">
         <button
             x-on:click="document.getElementById('picture').click()"
@@ -16,7 +16,6 @@
             class="image-upload-button">
             画像を選択する
         </button>
-        <!-- ファイル選択インプット（非表示） -->
         <input
             @change="showPreview(event)"
             type="file"
@@ -26,7 +25,6 @@
             accept="image/*">
     </div>
 
-    <!-- プレビュー用のスクリプト -->
     <script>
         function picturePreview() {
             return {

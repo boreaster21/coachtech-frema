@@ -38,7 +38,7 @@
                 @csrf
                 <button type="submit">ログアウト</button>
             </form>
-            <a href="{{ url('/mypage') }}">マイページ</a>
+            <a href="{{ url('/mypage?tab=listed') }}">マイページ</a>
             <a href="{{ route('product.create') }}">出品</a>
             @else
             <a href="{{ route('login') }}">ログイン</a>

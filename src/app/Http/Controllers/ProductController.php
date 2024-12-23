@@ -77,7 +77,7 @@ class ProductController extends Controller
 
         $product->comments()->create([
             'user_id' => Auth::id(),
-            'content' => $request->input('content'), 
+            'content' => $request->input('content'),
         ]);
 
         return redirect()->route('item.comments', $product);
@@ -133,7 +133,7 @@ class ProductController extends Controller
         // 商品詳細を取得
         $product = Product::with('categories', 'conditions')->findOrFail($id);
         // ->withCount('likes', 'comments')
-        
+
 
         return view('items', compact('product'));
     }
@@ -216,5 +216,4 @@ class ProductController extends Controller
 
         return view('index', compact('products', 'query', 'sort_by', 'category_id', 'price_min', 'price_max'));
     }
-
 }

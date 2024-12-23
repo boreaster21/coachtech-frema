@@ -18,14 +18,19 @@ class ProductFactory extends Factory
     {
         $faker = Faker::create('ja_JP');
 
-        $images = File::exists(storage_path('app/public/product-icons')) ? File::files(storage_path('app/public/product-icons')) : [];
-        $randomImage = $images ? $images[array_rand($images)]->getFilename() : null;
+        $images = [
+            'https://x.gd/nI5Qd',
+            'https://x.gd/a5dGW',
+            'https://x.gd/huvce',
+        ];
+
+        $randomImage = $images[array_rand($images)];
 
         $user = User::inRandomOrder()->first() ?? User::factory()->create();
 
         return [
             'user_id' => $user->id,
-            'product_photo_path' => $randomImage ? 'storage/product-icons/' . $randomImage : null,
+            'product_photo_path' => $randomImage,
             'name' => $faker->word,
             'brand_name' => $faker->word,
             'description' => $faker->sentence,
@@ -36,7 +41,6 @@ class ProductFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function ($product) {
-            // カテゴリと状態を中間テーブルに登録
             $categories = Category::inRandomOrder()->take(3)->pluck('id')->toArray();
             if (empty($categories)) {
                 $categories = Category::factory()->count(3)->create()->pluck('id')->toArray();

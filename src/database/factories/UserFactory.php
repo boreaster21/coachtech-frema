@@ -23,12 +23,12 @@ class UserFactory extends Factory
     {
         $faker = Faker::create('ja_JP');
 
-        $images = File::exists(storage_path('app/public/profile-icons'))
-        ? File::files(storage_path('app/public/profile-icons'))
-        : [];
-        $randomImage = $images
-            ? 'storage/profile-icon/' . $images[array_rand($images)]->getFilename()
-            : 'storage/profile-icon/default.png';
+        $images = [
+            'https://x.gd/bHbNT',
+            'https://x.gd/qvc6p',
+            'https://x.gd/nwbeT',
+        ];
+        $randomImage = $images[array_rand($images)];
 
         $role = Role::where('name', 'user')->first();
         if (!$role) {

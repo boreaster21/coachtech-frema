@@ -13,21 +13,18 @@
     <h1 class="profile-title"></h1>
 
     <div class="profile-content">
-        <!-- プロフィール情報の更新フォーム -->
         <div class="profile-section">
             <div class="profile-section-content">
                 @include('profile.partials.update-profile-information-form')
             </div>
         </div>
 
-        <!-- パスワード変更フォーム -->
         <div class="profile-section">
             <div class="profile-section-content">
                 @include('profile.partials.update-password-form')
             </div>
         </div>
 
-        <!-- アカウント削除フォーム -->
         <div class="profile-section">
             <div class="profile-section-content">
                 @include('profile.partials.delete-user-form')

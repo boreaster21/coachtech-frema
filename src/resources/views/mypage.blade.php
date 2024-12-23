@@ -9,7 +9,12 @@
 
     <div class="user-info">
         <div class="user-icon">
-            <img src="{{ $user->profile_photo_path ? Storage::url($user->profile_photo_path) : asset('/images/default_avatar.png') }}" alt="User Icon" class="comment-user-icon">
+            <img
+                src="{{ $user->profile_photo_path 
+                    ? Storage::url($user->profile_photo_path) 
+                    : asset('images/default_avatar.png') }}"
+                alt="User Icon"
+                class="comment-user-icon">
         </div>
         <h1 class="user-name">{{ $user->name }}さんのマイページ</h1>
         <a href="/profile" class="profile-edit-button">プロフィールを編集</a>
