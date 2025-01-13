@@ -7,9 +7,7 @@ use App\Models\Payment;
 
 class PaymentSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
         $paymentMethods = [

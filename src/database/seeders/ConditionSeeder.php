@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ConditionSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
         DB::table('conditions')->insert([

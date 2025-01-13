@@ -19,9 +19,7 @@
         <p>{{ $product->brand_name }}</p>
         <h2>{{ number_format($product->price) }}円</h2>
 
-        <!-- お気に入りとコメントアイコン -->
         <div class="icons">
-            <!-- お気に入りアイコン -->
             <form action="{{ route('item.favorite', $product->id) }}" method="POST"
                 @guest onclick="return false;" @endguest>
                 @csrf
@@ -30,20 +28,16 @@
                 </button>
             </form>
 
-            <!-- コメントアイコン -->
             <a href="{{ route('item.comments', $product->id) }}" class="comment-icon" title="コメント">
                 <i class="fa fa-comment"></i>
             </a>
         </div>
 
-        <!-- 購入ボタン -->
         <a href="{{ route('purchase', $product->id) }}" class="buy-button">購入する</a>
 
-        <!-- 商品説明 -->
         <h3>商品説明</h3>
         <p>{{ $product->description }}</p>
 
-        <!-- 商品情報 -->
         <div class="product-info">
             <dl>
                 <dt>カテゴリー</dt>
@@ -80,7 +74,6 @@
             icon.addEventListener('click', async () => {
                 const productId = icon.getAttribute('data-product-id');
 
-                // サーバー側にリクエストを送信してお気に入り状態を切り替え
                 const response = await fetch(`/product/${productId}/favorite`, {
                     method: 'POST',
                     headers: {
@@ -89,7 +82,7 @@
                 });
 
                 if (response.ok) {
-                    icon.classList.toggle('favorited'); // スタイルを変更
+                    icon.classList.toggle('favorited'); 
                 }
             });
         });

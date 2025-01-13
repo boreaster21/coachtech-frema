@@ -11,11 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // $middleware->prepend(\Illuminate\Cookie\Middleware\EncryptCookies::class); // クッキー暗号化
-        // $middleware->prepend(\Illuminate\Session\Middleware\StartSession::class); // セッション開始
-        // $middleware->append(\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class); // CSRFトークン検証
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        // 必要に応じて設定
     })
     ->create();

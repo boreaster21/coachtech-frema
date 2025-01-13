@@ -71,7 +71,7 @@ class PaymentController extends Controller
                     'quantity' => 1,
                 ]],
                 'mode' => 'payment',
-                'success_url' => route('purchase.success.get', $product->id), // 新しいGET用ルート
+                'success_url' => route('purchase.success.get', $product->id), 
                 'cancel_url' => route('purchase', $product->id),
             ]);
 

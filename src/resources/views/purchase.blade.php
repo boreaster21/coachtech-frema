@@ -55,13 +55,11 @@
         </table>
 
         @if(session('payment_method') === 'Stripe')
-        <!-- Stripe決済ボタン -->
         <form id="stripe-form" action="{{ route('purchase.stripe', $product->id) }}" method="POST">
             @csrf
             <button id="stripe-button" class="purchase-button">購入を確定する</button>
         </form>
         @else
-        <!-- 通常の購入ボタン -->
         <form action="{{ route('purchase.success', $product->id) }}" method="POST">
             @csrf
             <button class="purchase-button">購入を確定する</button>
@@ -74,16 +72,14 @@
     @if(session('payment_method') === 'Stripe')
     <script src="https://js.stripe.com/v3/"></script>
     <script>
-        // Stripeキーを正しく取得
         const stripeKey = '{{ config("services.stripe.key") }}';
         console.log("Stripe Publishable Key:", stripeKey);
         const stripe = Stripe(stripeKey);
 
         document.getElementById('stripe-button').addEventListener('click', async (e) => {
-            e.preventDefault(); // デフォルトのフォーム送信を防ぐ
+            e.preventDefault(); 
 
             try {
-                // サーバーにリクエストを送信してセッションIDを取得
                 const response = await fetch("{{ route('purchase.stripe', $product->id) }}", {
                     method: "POST",
                     headers: {
@@ -96,10 +92,9 @@
                 });
 
                 const data = await response.json();
-                console.log("Stripe Checkout Session Response:", data); // ここでセッションIDを確認
+                console.log("Stripe Checkout Session Response:", data);
 
                 if (response.ok) {
-                    // Stripe Checkoutにリダイレクト
                     await stripe.redirectToCheckout({
                         sessionId: data.sessionId
                     });

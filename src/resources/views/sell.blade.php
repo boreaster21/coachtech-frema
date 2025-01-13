@@ -11,7 +11,6 @@
     <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
-        <!-- 商品画像 -->
         <div class="form-group">
             <label for="product_image">商品画像</label>
             <input type="file" name="product_image" id="product_image" required>
@@ -21,7 +20,6 @@
             <h2>商品の詳細</h2>
         </div>
 
-        <!-- カテゴリー選択 -->
         <div class="form-group">
             <label for="category">カテゴリー</label>
             <select name="category" id="category" required>
@@ -31,7 +29,6 @@
             </select>
         </div>
 
-        <!-- 商品の状態選択 -->
         <div class="form-group">
             <label for="condition">商品の状態</label>
             <select name="condition" id="condition" required>
@@ -45,19 +42,16 @@
             <h2>商品名と説明</h2>
         </div>
 
-        <!-- 商品名 -->
         <div class="form-group">
             <label for="name">商品名</label>
             <input type="text" name="name" id="name" required>
         </div>
 
-        <!-- ブランド名 -->
         <div class="form-group">
             <label for="brand_name">ブランド名</label>
             <input type="text" name="brand_name" id="brand_name">
         </div>
 
-        <!-- 商品の説明 -->
         <div class="form-group">
             <label for="description">商品の説明</label>
             <textarea name="description" id="description" rows="4" required></textarea>
@@ -67,7 +61,6 @@
             <h2>販売価格</h2>
         </div>
 
-        <!-- 販売価格 -->
         <div class="form-group">
             <label for="price">販売価格</label>
             <div class="price-container">

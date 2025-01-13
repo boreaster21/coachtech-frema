@@ -7,7 +7,6 @@
 <div class="admin-container">
     <h1>管理画面</h1>
 
-    <!-- 成功/エラーのフィードバック -->
     @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -48,7 +47,6 @@
         </tbody>
     </table>
 
-    <!-- メール送信モーダル -->
     <div id="mailModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeMailModal()">&times;</span>

@@ -3,10 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Faker\Factory as Faker;
-use Illuminate\Support\Facades\File;
 use App\Models\Role;
 
 /**
@@ -16,17 +14,14 @@ class UserFactory extends Factory
 {
     protected static ?string $password = null;
 
-    /**
-     * Define the model's default state.
-     */
     public function definition(): array
     {
         $faker = Faker::create('ja_JP');
 
         $images = [
-            'https://x.gd/bHbNT',
-            'https://x.gd/qvc6p',
-            'https://x.gd/nwbeT',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463380627456/default_avatar.png?ex=67857788&is=67842608&hm=15fee9f54db62b17de009650414c5d8b3fa2b5e965cb2d29cb32bebdb69d2aef&',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463657316415/default_avatar1.png?ex=67857788&is=67842608&hm=54c99b044aabce5eaac9eaf198ab5180751ca3113e703dc6c14841baf8ce14bf&',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669464097853461/default_avatar2.png?ex=67857789&is=67842609&hm=c883cf0952183d733cb1b2dd427cdbdc49f9c83dafeddd8b5ef9bb23a348dde7&',
         ];
         $randomImage = $images[array_rand($images)];
 
@@ -48,9 +43,7 @@ class UserFactory extends Factory
             'role_id' => $role->id,
         ];
     }
-    /**
-     * Indicate that the user should have an admin role.
-     */
+
     public function admin(): static
     {
         $role = Role::where('name', 'admin')->first();
@@ -65,11 +58,6 @@ class UserFactory extends Factory
         ]);
     }
 
-
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     */
     public function unverified(): static
     {
         return $this->state(fn(array $attributes) => [

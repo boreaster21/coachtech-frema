@@ -13,15 +13,12 @@
         </a>
     </div>
 
-    <!-- 商品詳細 -->
     <div class="product-details">
         <h1>{{ $product->name }}</h1>
         <p>{{ $product->brand_name }}</p>
         <h2>{{ number_format($product->price) }}円</h2>
 
-        <!-- お気に入りとコメントアイコン -->
         <div class="icons">
-            <!-- お気に入りアイコン -->
             <form action="{{ route('item.favorite', $product->id) }}" method="POST" @guest onclick="return false;" @endguest>
                 @csrf
                 <button type="submit" class="favorite-button" title="お気に入り">
@@ -29,16 +26,13 @@
                 </button>
             </form>
 
-            <!-- コメントアイコン -->
             <a href="{{ route('item.comments', $product->id) }}" class="comment-icon" title="コメント">
                 <i class="fa fa-comment"></i>
             </a>
         </div>
 
-        <!-- 購入ボタン -->
         <a href="{{ route('purchase', $product->id) }}" class="buy-button">購入する</a>
 
-        <!-- コメント表示エリア -->
         <div class="chat-container">
             <div class="comment-list">
                 @foreach ($comments as $comment)
@@ -53,7 +47,6 @@
                 @endforeach
             </div>
 
-            <!-- コメント投稿フォーム -->
             @auth
             <form action="{{ route('item.comment.store', $product->id) }}" method="POST" class="comment-form">
                 @csrf

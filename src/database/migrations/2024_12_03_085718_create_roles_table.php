@@ -6,14 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up()
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique(); // 例: "admin", "user"
+            $table->string('name')->unique(); 
             $table->timestamps();
         });
 
@@ -23,14 +21,10 @@ return new class extends Migration
 
     }
 
-
-    /**
-     * Reverse the migrations.
-     */
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['role_id']); // 外部キー制約を削除
+            $table->dropForeign(['role_id']); 
         });
 
         Schema::dropIfExists('roles');

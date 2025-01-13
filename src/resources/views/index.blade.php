@@ -16,7 +16,6 @@
 </div>
 @endif
 
-<!-- タブの表示内容 -->
 @if(request('tab') === 'recommend' || !request('tab'))
 <section class="product-grid">
     @forelse ($products as $product)

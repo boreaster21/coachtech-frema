@@ -10,15 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index(Request $request)
     {
         $tab = $request->input('tab', 'recommend');
 
         $products = Product::where('is_sold', false)
-            ->doesntHave('purchasers') // 購入者がいない商品を取得
+            ->doesntHave('purchasers') 
             ->get();
 
         $myFavorites = [];
@@ -51,12 +49,11 @@ class ProductController extends Controller
     {
         dd('a');
         if (Auth::check()) {
-            // ユーザーのお気に入り商品を取得
             $products = Auth::user()->favorites()->with('categories', 'conditions')->get();
 
             return view('index', [
                 'products' => $products,
-                'tab' => 'mylist', // 現在のタブを明示
+                'tab' => 'mylist', 
             ]);
         }
 
@@ -83,9 +80,6 @@ class ProductController extends Controller
         return redirect()->route('item.comments', $product);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $categories = Category::all();
@@ -93,9 +87,6 @@ class ProductController extends Controller
         return view('sell', compact('categories', 'conditions'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -125,9 +116,6 @@ class ProductController extends Controller
         return redirect()->route('product.index')->with('status', '商品が正常に出品されました。');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show($id)
     {
         // 商品詳細を取得
@@ -138,25 +126,17 @@ class ProductController extends Controller
         return view('items', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Product $product)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, Product $product)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Product $product)
     {
         //
@@ -166,13 +146,12 @@ class ProductController extends Controller
     {
         $query = $request->input('query');
         $sort_by = $request->input('sort_by', 'relevance');
-        $category_id = $request->input('category_id'); // カテゴリフィルタ
-        $price_min = $request->input('price_min'); // 価格フィルタ(最小値)
-        $price_max = $request->input('price_max'); // 価格フィルタ(最大値)
+        $category_id = $request->input('category_id'); 
+        $price_min = $request->input('price_min'); 
+        $price_max = $request->input('price_max'); 
 
         $products = Product::query();
 
-        // キーワード検索
         if ($query) {
             $products->where(function ($q) use ($query) {
                 $q->where('name', 'like', "%{$query}%")
@@ -181,14 +160,12 @@ class ProductController extends Controller
             });
         }
 
-        // カテゴリフィルタ
         if ($category_id) {
             $products->whereHas('categories', function ($q) use ($category_id) {
                 $q->where('categories.id', $category_id);
             });
         }
 
-        // 価格フィルタ
         if ($price_min) {
             $products->where('price', '>=', $price_min);
         }
@@ -196,7 +173,6 @@ class ProductController extends Controller
             $products->where('price', '<=', $price_max);
         }
 
-        // 並び替え
         $allowedSortOptions = ['price_asc', 'price_desc', 'newest', 'relevance'];
         if (in_array($sort_by, $allowedSortOptions)) {
             switch ($sort_by) {

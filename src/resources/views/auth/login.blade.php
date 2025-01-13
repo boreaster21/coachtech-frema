@@ -11,7 +11,6 @@
 
 @section('content')
 <div class="login-container">
-    <!-- セッションステータス -->
     @if(session('status'))
     <div class="alert alert-warning">
         {{ session('status') }}
@@ -21,21 +20,18 @@
     <form method="POST" action="{{ route('login') }}" class="login-form">
         @csrf
 
-        <!-- メールアドレス -->
         <div class="form-group">
             <x-input-label for="email" :value="__('メールアドレス')" />
             <x-text-input id="email" class="input-field" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="error-message" />
         </div>
 
-        <!-- パスワード -->
         <div class="form-group mt-4">
             <x-input-label for="password" :value="__('パスワード')" />
             <x-text-input id="password" class="input-field" type="password" name="password" required autocomplete="current-password" />
             <x-input-error :messages="$errors->get('password')" class="error-message" />
         </div>
 
-        <!-- ログインを継続する -->
         <div class="form-group mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="checkbox" name="remember">
@@ -43,7 +39,6 @@
             </label>
         </div>
 
-        <!-- ボタンとリンク -->
         <div class="form-group mt-6">
             <x-primary-button class="login-button">
                 {{ __('ログインする') }}

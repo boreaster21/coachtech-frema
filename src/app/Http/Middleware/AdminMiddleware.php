@@ -21,13 +21,11 @@ class AdminMiddleware
         $user = Auth::user();
 
         if (!$user) {
-            // ユーザーが未認証の場合、ログにエラーメッセージを記録し、ログインページにリダイレクト
             Log::error('Unauthorized access attempt', ['url' => $request->url()]);
             return redirect()->route('login');
         }
 
         if (optional($user->role)->name !== 'admin') {
-            // 管理者権限がない場合、403エラーを返す
             Log::warning('Access denied for non-admin user', [
                 'user_id' => $user->id,
                 'url' => $request->url(),
@@ -35,6 +33,6 @@ class AdminMiddleware
             return response()->json(['message' => 'Unauthorized'], 403);
         }
 
-        return $next($request); // 正常なリクエストフロー
+        return $next($request); 
     }
 }
