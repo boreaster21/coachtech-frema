@@ -19,7 +19,6 @@ class AddressController extends Controller
             'building' => 'nullable|string|max:255',
         ]);
 
-
         $user = Auth::user();
         $user->address = $request->address;
         $user->save();

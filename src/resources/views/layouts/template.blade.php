@@ -11,13 +11,11 @@
 </head>
 
 <body>
-    <!-- ヘッダー -->
     <header class="header">
         <a href="{{ url('/') }}" class="logo-container">
             <img src="{{ asset('images/logo_coachtech.svg') }}" class="logo" alt="coachtech" width="100" height="100">
         </a>
 
-        <!-- 検索フォーム -->
         @unless(View::getSection('hide_search'))
         <form action="{{ route('products.search') }}" method="GET" class="search-form">
             <input type="text" name="query" class="search-box" placeholder="何をお探しですか？" value="{{ request('query') }}">
@@ -30,7 +28,6 @@
         </form>
         @endunless
 
-        <!-- ナビゲーションボタン -->
         @unless(View::getSection('hide_nav'))
         <nav class="nav-buttons">
             @auth
@@ -49,16 +46,12 @@
         @endunless
     </header>
 
-    <!-- コンテンツ -->
     <div class="main-content">
         @yield('content')
     </div>
 
-    <!-- フッター -->
     <footer class="footer-content">
         <p>&copy; 2024 coachtechFURIMA. All rights reserved.</p>
     </footer>
-
 </body>
-
 </html>

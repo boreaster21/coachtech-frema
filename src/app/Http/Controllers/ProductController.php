@@ -23,10 +23,9 @@ class ProductController extends Controller
         if ($tab === 'mylist' && Auth::check()) {
             $myFavorites = Auth::user()->favorites()
                 ->with('categories', 'conditions')
-                ->doesntHave('purchasers') // 購入済み商品を除外
+                ->doesntHave('purchasers') 
                 ->get();
         }
-
         return view('index', compact('products', 'tab', 'myFavorites'));
     }
 
@@ -41,13 +40,11 @@ class ProductController extends Controller
         } else {
             $user->favorites()->attach($id);
         }
-
         return back();
     }
 
     public function myFavorites()
     {
-        dd('a');
         if (Auth::check()) {
             $products = Auth::user()->favorites()->with('categories', 'conditions')->get();
 
@@ -59,8 +56,6 @@ class ProductController extends Controller
 
         return redirect()->route('login')->with('status', 'マイリストを見るにはログインが必要です。');
     }
-
-
 
     public function showComments(Product $product)
     {
@@ -118,28 +113,11 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        // 商品詳細を取得
         $product = Product::with('categories', 'conditions')->findOrFail($id);
         // ->withCount('likes', 'comments')
 
 
         return view('items', compact('product'));
-    }
-
-    public function edit(Product $product)
-    {
-        //
-    }
-
-
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
-
-    public function destroy(Product $product)
-    {
-        //
     }
 
     public function search(Request $request)

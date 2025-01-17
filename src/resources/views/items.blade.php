@@ -6,14 +6,12 @@
 @endsection
 @section('content')
 <div class="container">
-    <!-- 商品画像 -->
     <div class="product-image">
         <a href="{{ route('product.show', $product->id) }}">
             <img src="{{ asset($product->product_photo_path) }}" alt="{{ $product->name }}">
         </a>
     </div>
 
-    <!-- 商品詳細 -->
     <div class="product-details">
         <h1>{{ $product->name }}</h1>
         <p>{{ $product->brand_name }}</p>
@@ -82,7 +80,7 @@
                 });
 
                 if (response.ok) {
-                    icon.classList.toggle('favorited'); 
+                    icon.classList.toggle('favorited');
                 }
             });
         });

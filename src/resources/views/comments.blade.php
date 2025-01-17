@@ -6,7 +6,6 @@
 @endsection
 @section('content')
 <div class="product-container">
-    <!-- 商品画像 -->
     <div class="product-image">
         <a href="{{ route('product.show', $product->id) }}">
             <img src="{{ asset($product->product_photo_path) }}" alt="{{ $product->name }}">

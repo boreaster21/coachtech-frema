@@ -60,7 +60,6 @@ class AdminController extends Controller
                 ->route('admin.dashboard')
                 ->with('error', 'メール送信に失敗しました: ' . $e->getMessage());
         }
-
     }
 }
 

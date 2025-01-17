@@ -86,7 +86,6 @@
 
             if (result.success) {
                 displayMessage("決済が完了しました。");
-                // Stripe Checkoutにリダイレクト
                 await stripe.redirectToCheckout({
                     sessionId: result.sessionId,
                 });
