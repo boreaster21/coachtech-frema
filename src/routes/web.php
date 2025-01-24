@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/{product}', [PaymentController::class, 'purchase'])->name('purchase');
         Route::post('/stripe/{product}', [PaymentController::class, 'stripePurchase'])->name('purchase.stripe');
         Route::post('/success/{product}', [PaymentController::class, 'success'])->name('purchase.success');
+        Route::get('/success/{product}', [PaymentController::class, 'success'])->name('purchase.success.get');
     });
 
     Route::get('/payment/edit', [PaymentController::class, 'edit'])->name('payment.edit');

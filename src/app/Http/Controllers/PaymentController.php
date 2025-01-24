@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Purchase;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
@@ -71,7 +71,7 @@ class PaymentController extends Controller
                     'quantity' => 1,
                 ]],
                 'mode' => 'payment',
-                'success_url' => route('purchase.success.get', $product->id), 
+                'success_url' => route('purchase.success', $product->id),
                 'cancel_url' => route('purchase', $product->id),
             ]);
 
@@ -91,7 +91,7 @@ class PaymentController extends Controller
     {
         if ($product->is_sold) {
             return redirect()->route('mypage', ['tab' => 'purchased'])
-            ->with('status', 'この商品は既に購入されています。');
+                ->with('status', 'この商品は既に購入されています。');
         }
 
         $product->update(['is_sold' => true]);
@@ -104,7 +104,7 @@ class PaymentController extends Controller
         ]);
 
         return redirect()->route('mypage', ['tab' => 'purchased'])
-        ->with('status', '購入が完了しました。');
+            ->with('status', '購入が完了しました。');
     }
 
 
@@ -112,7 +112,7 @@ class PaymentController extends Controller
     {
         if ($product->is_sold) {
             return redirect()->route('mypage', ['tab' => 'purchased'])
-            ->with('status', 'この商品は既に購入されています。');
+                ->with('status', 'この商品は既に購入されています。');
         }
 
         $product->update(['is_sold' => true]);
@@ -129,7 +129,7 @@ class PaymentController extends Controller
         ]);
 
         return redirect()->route('mypage', ['tab' => 'purchased'])
-        ->with('status', '購入が完了しました。');
+            ->with('status', '購入が完了しました。');
     }
 
     public function edit(Request $request)
@@ -138,7 +138,7 @@ class PaymentController extends Controller
             session(['redirect_to' => $request->input('redirect_to')]);
         }
 
-        $payments = Payment::all(); 
+        $payments = Payment::all();
         return view('payment.edit', compact('payments'));
     }
 
@@ -151,5 +151,4 @@ class PaymentController extends Controller
         return redirect(session('redirect_to', route('mypage')))
             ->with('success', '支払い方法が更新されました。');
     }
-
 }
