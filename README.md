@@ -77,8 +77,14 @@ git clone git@github.com:boreaster21/coachtech-frema.git
 # Dockerコンテナのビルドと起動
 docker-compose up -d --build
 
-# 環境変数の設定
+# Laravel のパッケージのインストール
+docker-compose exec php bash
+composer install
+
+# .env ファイルの作成
 cp .env.example .env
+
+
 
 # Laravel設定
 docker-compose exec app php artisan key:generate
