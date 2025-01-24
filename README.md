@@ -81,11 +81,52 @@ docker-compose up -d --build
 docker-compose exec php bash
 composer install
 
-# .env ファイルの作成
+# .env ファイルの作成と修正
 cp .env.example .env
+```
+
+```bash
+- APP_LOCALE=en
+- APP_FALLBACK_LOCALE=en
+- APP_FAKER_LOCALE=en_US
++ APP_LOCALE=ja
++ APP_FALLBACK_LOCALE=en
++ APP_FAKER_LOCALE=ja_JP
+
+APP_MAINTENANCE_DRIVER=file
+- # APP_MAINTENANCE_STORE=database
+~~~
+- DB_CONNECTION=sqlite
+- # DB_HOST=127.0.0.1
+- # DB_PORT=3306
+- # DB_DATABASE=laravel
+- # DB_USERNAME=root
+- # DB_PASSWORD=
++ DB_CONNECTION=mysql
++ DB_HOST=mysql
++ DB_PORT=3306
++ DB_DATABASE=laravel_db
++ DB_USERNAME=laravel_user
++ DB_PASSWORD=laravel_pass
+~~~
+- MAIL_MAILER=log
+- MAIL_HOST=127.0.0.1
+MAIL_PORT=2525
+- MAIL_USERNAME=null
+- MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
++ MAIL_MAILER=smtp
++ MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
++ MAIL_USERNAME='ご自身のmailtrapアカウントから引用してください'
++ MAIL_PASSWORD='ご自身のmailtrapアカウントから引用してください'
+~~~
++ STRIPE_KEY=''ご自身のSTRIPEアカウントから引用してください'
++ STRIPE_SECRET='ご自身のSTRIPEアカウントから引用してください'
+```
 
 
-
+```bash
 # Laravel設定
 docker-compose exec app php artisan key:generate
 docker-compose exec app php artisan migrate --seed
