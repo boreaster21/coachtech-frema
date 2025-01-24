@@ -121,7 +121,7 @@ MAIL_PORT=2525
 + MAIL_USERNAME='ご自身のmailtrapアカウントから引用してください'
 + MAIL_PASSWORD='ご自身のmailtrapアカウントから引用してください'
 ~~~
-+ STRIPE_KEY=''ご自身のSTRIPEアカウントから引用してください'
++ STRIPE_KEY='ご自身のSTRIPEアカウントから引用してください'
 + STRIPE_SECRET='ご自身のSTRIPEアカウントから引用してください'
 ```
 
