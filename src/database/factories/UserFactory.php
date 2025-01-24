@@ -19,9 +19,9 @@ class UserFactory extends Factory
         $faker = Faker::create('ja_JP');
 
         $images = [
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463380627456/default_avatar.png?ex=67934f48&is=6791fdc8&hm=5cf3db1127fa31fef3557e529eba03cec227a4ac511899c0a2ea9f16a184be22&',
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463657316415/default_avatar1.png?ex=67934f48&is=6791fdc8&hm=6bd70df70db32a19499a7e645eb563b3744e30a6425649a291cd15789f5bc1d1&',
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669464097853461/default_avatar2.png?ex=67934f49&is=6791fdc9&hm=81705d2477c24b0ba5f7e3e03dd379b17c9b9217b470e0de2aeb8a62dff52d26&',
+            'https://x.gd/hBNom',
+            'https://x.gd/Puow4',
+            'https://x.gd/2pz6X',
         ];
         $randomImage = $images[array_rand($images)];
 
