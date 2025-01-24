@@ -10,9 +10,9 @@
     <div class="user-info">
         <div class="user-icon">
             <img
-                src="{{ $user->profile_photo_path 
-                    ? Storage::url($user->profile_photo_path) 
-                    : 'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463380627456/default_avatar.png?ex=67857788&is=67842608&hm=15fee9f54db62b17de009650414c5d8b3fa2b5e965cb2d29cb32bebdb69d2aef&' }}"
+                src="{{ Auth::user()->profile_photo_path 
+                    ? Storage::url(Auth::user()->profile_photo_path) 
+                    : asset('images/default_avatar.png') }}"
                 alt="User Icon"
                 class="comment-user-icon">
         </div>

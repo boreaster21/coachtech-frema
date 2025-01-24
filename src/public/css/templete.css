@@ -53,9 +53,10 @@
     color: white;
     background-color: transparent;
     border: none;
-    margin-left: 15px;
+    margin-left: 0.8vw;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.3vw;
     cursor: pointer;
     transition: color 0.3s ease;
     display: flex;
@@ -66,10 +67,10 @@
 .nav-buttons a[href*="/sell"] {
     color: black;
     background-color: white;
-    padding: 5px 10px;
+    padding: 1px 10px;
     border: 1px solid black;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 1.3vw;
     font-weight: bold;
 }
 
@@ -79,6 +80,7 @@
 }
 
 body {
+    width: 100%;
     margin: 0;
     padding: 0;
 }
@@ -92,6 +94,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
     .header {
         flex-direction: column;
@@ -137,8 +144,9 @@ body {
     }
 
     .nav-buttons a,
+    .nav-buttons form,
     .nav-buttons button {
-        width: 90%;
+        width: 100%;
         margin: 5px 0;
         padding: 10px;
         font-size: 16px;
@@ -148,5 +156,6 @@ body {
     .nav-buttons a[href*="/sell"] {
         color: black;
         background-color: white;
+        font-size: 18px;
     }
 }

@@ -31,6 +31,9 @@
         @unless(View::getSection('hide_nav'))
         <nav class="nav-buttons">
             @auth
+            @if(Auth::user()->role_id === 1)
+            <a href="{{ url('/admin') }}">管理画面</a>
+            @endif
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit">ログアウト</button>
@@ -54,4 +57,5 @@
         <p>&copy; 2024 coachtechFURIMA. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

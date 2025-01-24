@@ -19,9 +19,9 @@ class UserFactory extends Factory
         $faker = Faker::create('ja_JP');
 
         $images = [
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463380627456/default_avatar.png?ex=678b6648&is=678a14c8&hm=eb73b26e1e9370debc9a296ec4f23ad1e154345fcc3fa63c2ee808a8857ae844&',
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463657316415/default_avatar1.png?ex=678b6648&is=678a14c8&hm=229385df691c82678eb1d9bd4f3682e1e24bbdc1aebb8e87ac9203c0992ba935&',
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669464097853461/default_avatar2.png?ex=678b6649&is=678a14c9&hm=5fdb73fbaba028bfcc64cf430bff8067458f8843f62734c8bffa9fd0bdc9a139&',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463380627456/default_avatar.png?ex=67934f48&is=6791fdc8&hm=5cf3db1127fa31fef3557e529eba03cec227a4ac511899c0a2ea9f16a184be22&',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669463657316415/default_avatar1.png?ex=67934f48&is=6791fdc8&hm=6bd70df70db32a19499a7e645eb563b3744e30a6425649a291cd15789f5bc1d1&',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669464097853461/default_avatar2.png?ex=67934f49&is=6791fdc9&hm=81705d2477c24b0ba5f7e3e03dd379b17c9b9217b470e0de2aeb8a62dff52d26&',
         ];
         $randomImage = $images[array_rand($images)];
 

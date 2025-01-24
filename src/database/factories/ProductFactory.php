@@ -18,9 +18,9 @@ class ProductFactory extends Factory
         $faker = Faker::create('ja_JP');
 
         $images = [
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669464710217728/smpl.png?ex=678b6649&is=678a14c9&hm=816bd35493f7aafa3d3b04ec562ac659be2e12c68a2df5ac580f2890cb3d9553&',
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669465242763264/smpl1.png?ex=678b6649&is=678a14c9&hm=cc595c56f2fcc7e3370ee443e51ceaf37c06d56f28997102126acc7d859f11d9&',
-            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669465599410186/ampl2.png?ex=678b6649&is=678a14c9&hm=b8aa25c600ecaedb7ec35ab3e9cc3749c910f7a77a999c758affd98dbcea3157&',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669464710217728/smpl.png?ex=67934f49&is=6791fdc9&hm=2bd4c4244ebb2d55173a2e43d223e150c3a4b88b2e7e5af3058d8180512f2539&',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669465242763264/smpl1.png?ex=67934f49&is=6791fdc9&hm=8a00b025e5758467f7a9b81903732391c189677c1bcf67c8bd914470cb0999a3&',
+            'https://cdn.discordapp.com/attachments/1320669348490383401/1320669465599410186/ampl2.png?ex=67934f49&is=6791fdc9&hm=cead0c6a82e3cbd5683cd4efaa8cebf3943c4dcbc8172c3796d7d2ffd429b503&',
         ];
 
         $randomImage = $images[array_rand($images)];

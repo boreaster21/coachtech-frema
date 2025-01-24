@@ -31,15 +31,14 @@ class AdminController extends Controller
 
     public function deleteComment($id)
     {
-        $comment = Comment::findOrFail($id);
+        try {
+            $comment = Comment::findOrFail($id); 
+            $comment->delete();
 
-        if (auth()->user()->role->name !== 'admin') {
-            return response('Unauthorized action.', 403);
+            return redirect()->route('admin.dashboard')->with('success', 'コメントを削除しました。');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.dashboard')->with('error', 'コメント削除に失敗しました: ' . $e->getMessage());
         }
-
-        $comment->delete();
-
-        return redirect()->route('admin.dashboard')->with('success', 'コメントを削除しました。');
     }
 
     public function sendMail(Request $request)

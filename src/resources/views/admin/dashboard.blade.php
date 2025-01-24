@@ -31,15 +31,45 @@
         <tbody>
             @foreach($users as $user)
             <tr>
-                <td>{{ $user->id }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>
+                <td data-label="ID">{{ $user->id }}</td>
+                <td data-label="名前">{{ $user->name }}</td>
+                <td data-label="メールアドレス">{{ $user->email }}</td>
+                <td data-label="操作">
                     <button onclick="openMailModal({{ $user->id }}, '{{ addslashes($user->name) }}')" class="btn btn-primary">メール送信</button>
                     <form action="{{ route('admin.deleteUser', $user->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" onclick="return confirm('このユーザーを削除しますか？')">削除</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    <h2>コメント一覧</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>投稿者</th>
+                <th>コメント内容</th>
+                <th>商品名</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($comments as $comment)
+            <tr>
+                <td data-label="ID">{{ $comment->id }}</td>
+                <td data-label="投稿者">{{ $comment->user->name }}</td>
+                <td data-label="コメント内容">{{ $comment->content }}</td>
+                <td data-label="商品名">{{ $comment->product->name }}</td>
+                <td data-label="操作">
+                    <form action="{{ route('admin.deleteComment', $comment->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('このコメントを削除しますか？')">削除</button>
                     </form>
                 </td>
             </tr>
